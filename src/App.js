@@ -1,6 +1,10 @@
 import "./App.css";
-import Signup from "./components/Signup";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+
 import { Container } from "react-bootstrap";
+import HomeOwner from "./Pages/HomeOwner";
 
 function App() {
   return (
@@ -14,7 +18,10 @@ function App() {
 
         <div className="box-2">
           <div className="btn btn-two">
-            <span>SIGN UP AS A HOMEOWNER</span>
+            <span>
+              SIGN UP AS A HOMEOWNER
+              <HomeOwner />
+            </span>
           </div>
         </div>
 
