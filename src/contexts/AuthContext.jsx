@@ -48,9 +48,9 @@ const AuthProvider = ({ children }) => {
     logout,
   };
 
-  const value = { currentUser, signup };
-
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={exports}>{children}</AuthContext.Provider>
+  );
 };
 
 export default AuthProvider;

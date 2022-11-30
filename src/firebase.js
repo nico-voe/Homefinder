@@ -16,7 +16,7 @@ const app = initializeApp({
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
 });
 
-console.log(firebaseConfig);
+console.log(process.env.REACT_APP_FIREBASE_API_KEY);
 
 // init auth
 const auth = getAuth(app);
