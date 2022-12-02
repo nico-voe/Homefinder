@@ -26,7 +26,7 @@ const AuthProvider = ({ children }) => {
 
   //signout
   const logout = async () => {
-    await auth.logout();
+    await auth.signOut();
   };
 
   //firebase listens to any change

@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import { processFirebaseErrors } from "../utils/errors";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -28,9 +29,11 @@ const Register = () => {
       setError(error.message);
     }
   };
-
+  if (loading) return <>loading...</>;
   return (
     <div>
+      <h1>Register</h1>
+      {error && <div>{processFirebaseErrors(error)}</div>}
       <form onSubmit={onSubmit}>
         <label>Email</label>
         <input
@@ -48,6 +51,9 @@ const Register = () => {
         />
         <input type="submit" value="Register" />
       </form>
+      <p>
+        Already registered? <Link to="/login">Login</Link>
+      </p>
     </div>
   );
 };

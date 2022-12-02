@@ -1,38 +1,31 @@
 import "./App.css";
 import Signup from "./components/Signup";
 import { Container } from "react-bootstrap";
+import { useAuth } from "./contexts/AuthContext";
+import { Link } from "react-router-dom";
 
 function App() {
-  return (
-    <div className="App">
-      <div className="buttons">
-        <div className="box-1">
-          <div className="btn btn-one">
-            <span>SIGN UP AS A GUEST</span>
-          </div>
-        </div>
+  const { user, logout } = useAuth();
 
-        <div className="box-2">
-          <div className="btn btn-two">
-            <span>SIGN UP AS A HOMEOWNER</span>
-          </div>
-        </div>
-
-        <div className="box-3">
-          <div className="btn btn-three">
-            <span>LOGIN</span>
-          </div>
-        </div>
+  if (user)
+    return (
+      <div>
+        <div>{user.email}</div>
+        <button onClick={logout}>Logout</button>
       </div>
-      <Container
-        className="d-flex align-items-center justify-content-center"
-        style={{ minHeight: "100vh" }}
-      >
-        <div className="w-100" style={{ maxWidth: "400px" }}>
-          <Signup />
-        </div>
-      </Container>
-    </div>
+    );
+  return (
+    <>
+      <h1>Homefinder</h1>
+      <h1>Welcome to the Homefinder</h1>
+      <Link to="/register">
+        <button type="button">Register</button>
+      </Link>
+      <p>or</p>
+      <Link to="/login">
+        <button type="button">Login</button>
+      </Link>
+    </>
   );
 }
 
