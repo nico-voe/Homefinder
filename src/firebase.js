@@ -6,6 +6,13 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  serverTimestamp,
+} from "firebase/firestore";
+
 //initialize Firebase
 const app = initializeApp({
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -21,4 +28,11 @@ console.log(process.env.REACT_APP_FIREBASE_API_KEY);
 // init auth
 const auth = getAuth(app);
 export default app;
-export { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword };
+export {
+  auth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  collection,
+  addDoc,
+  serverTimestamp,
+};
