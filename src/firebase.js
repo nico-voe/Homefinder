@@ -23,10 +23,9 @@ const app = initializeApp({
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
 });
 
-console.log(process.env.REACT_APP_FIREBASE_API_KEY);
-
 // init auth
 const auth = getAuth(app);
+const db = getFirestore();
 export default app;
 export {
   auth,
@@ -34,5 +33,6 @@ export {
   signInWithEmailAndPassword,
   collection,
   addDoc,
+  db,
   serverTimestamp,
 };

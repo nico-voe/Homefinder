@@ -12,6 +12,9 @@ function App() {
       <div>
         <div>{user.email}</div>
         <button onClick={logout}>Logout</button>
+        <Link to="/profile">
+          <button type="button">Create Profile</button>
+        </Link>
       </div>
     );
   return (

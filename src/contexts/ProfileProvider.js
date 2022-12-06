@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import { addDoc, collection, serverTimestamp } from "../firebase";
+import { addDoc, collection, serverTimestamp, db } from "../firebase";
 
 const ProfileContext = createContext();
 
@@ -20,7 +20,7 @@ const ProfileProvider = ({ children }) => {
     });
   };
 
-  const exports = {};
+  const exports = { addProfile };
 
   return (
     <ProfileContext.Provider value={exports}>

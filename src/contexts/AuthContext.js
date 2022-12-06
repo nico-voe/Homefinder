@@ -15,7 +15,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState();
 
   //signup
-  const register = async ({ email, password }) => {
+  const firebaseRegister = async ({ email, password }) => {
     await createUserWithEmailAndPassword(auth, email, password);
   };
 
@@ -43,7 +43,7 @@ const AuthProvider = ({ children }) => {
 
   const exports = {
     user,
-    register,
+    firebaseRegister,
     login,
     logout,
   };

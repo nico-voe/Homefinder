@@ -9,7 +9,7 @@ const Register = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const { register } = useAuth();
+  const { firebaseRegister } = useAuth();
   const navigate = useNavigate();
 
   const onSubmit = async (e) => {
@@ -18,7 +18,7 @@ const Register = () => {
       setLoading(false);
 
       //go to db
-      await register({ email, password });
+      await firebaseRegister({ email, password });
       setLoading(true);
 
       //navigate to next page
